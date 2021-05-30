@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 using System;
@@ -8,6 +9,16 @@ namespace ConsoleUI
     class Program
     {
         static void Main(string[] args)
+        {
+
+            CarMenager carMenager = new CarMenager(new EfCarDal());
+            carMenager.Add(new Car { BrandId = 1, ColorId = 2, CarName = "Evo", DailyPrice = 0, Description = "Lorem impsum dollor", ModelYear = "2000" });
+
+
+            //   InMemory();
+        }
+
+        private static void InMemory()
         {
             CarMenager carMenager = new CarMenager(new InMemoryCarDal());
             Car carItem = new Car { Id = 7, BrandId = 4, DailyPrice = 5, ColorId = 54, Description = "Merhaba güzel insanlar", ModelYear = "1992" };
@@ -19,7 +30,7 @@ namespace ConsoleUI
             Car carItem1 = new Car { Id = 8, BrandId = 4, DailyPrice = 5, ColorId = 54, Description = "Merhaba güzel", ModelYear = "1992" };
 
             carMenager.Add(carItem1);
-            Car carItemToUpdate = new Car { Id = 8, ColorId = 54, BrandId = 4, DailyPrice = 5,  Description = "Yücel güzel", ModelYear = "1993" };
+            Car carItemToUpdate = new Car { Id = 8, ColorId = 54, BrandId = 4, DailyPrice = 5, Description = "Yücel güzel", ModelYear = "1993" };
 
 
             Console.WriteLine("-----------------------------------With Update-----------------------------------");
