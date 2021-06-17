@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using Core.Entities.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
@@ -75,19 +76,19 @@ namespace ConsoleUI
 
         private static void UserAddedTest()
         {
-            UserMenager userMenager = new UserMenager(new EfUserDal());
-            User user = new User { FirstName = "Yücel", LastName = "Bengü", Email = "jyouryok@78zjx.com", Password = "81dc9bdb52d04dc20036dbd8313ed055" };
-            User user1 = new User { FirstName = "Burak", LastName = "Şirin", Email = "beydocarti@biyac.com", Password = "81dc9bdb52d04dc20036dbd8313ed055" };
-            User user2 = new User { FirstName = "Kenan", LastName = "Çavdar", Email = "ceknigolme@biyac.com", Password = "81dc9bdb52d04dc20036dbd8313ed055" };
-            User user3 = new User { FirstName = "Burak", LastName = "Kaya", Email = "kitruharza@biyac.com", Password = "81dc9bdb52d04dc20036dbd8313ed055" };
-            User user4 = new User { FirstName = "Alican", LastName = "Tahtalı", Email = "vestulakno@biyac.com", Password = "81dc9bdb52d04dc20036dbd8313ed055" };
-            User user5 = new User { FirstName = "Koray", LastName = "Aksu", Email = "mohamedbensl@codingfury.tv", Password = "81dc9bdb52d04dc20036dbd8313ed055" };
-            userMenager.Add(user);
-            userMenager.Add(user1);
-            userMenager.Add(user2);
-            userMenager.Add(user3);
-            userMenager.Add(user4);
-            userMenager.Add(user5);
+            //UserMenager userMenager = new UserMenager(new EfUserDal());
+            //User user = new User { FirstName = "Yücel", LastName = "Bengü", Email = "jyouryok@78zjx.com", PasswordHash = "81dc9bdb52d04dc20036dbd8313ed055" };
+            //User user1 = new User { FirstName = "Burak", LastName = "Şirin", Email = "beydocarti@biyac.com", Password = "81dc9bdb52d04dc20036dbd8313ed055" };
+            //User user2 = new User { FirstName = "Kenan", LastName = "Çavdar", Email = "ceknigolme@biyac.com", Password = "81dc9bdb52d04dc20036dbd8313ed055" };
+            //User user3 = new User { FirstName = "Burak", LastName = "Kaya", Email = "kitruharza@biyac.com", Password = "81dc9bdb52d04dc20036dbd8313ed055" };
+            //User user4 = new User { FirstName = "Alican", LastName = "Tahtalı", Email = "vestulakno@biyac.com", Password = "81dc9bdb52d04dc20036dbd8313ed055" };
+            //User user5 = new User { FirstName = "Koray", LastName = "Aksu", Email = "mohamedbensl@codingfury.tv", Password = "81dc9bdb52d04dc20036dbd8313ed055" };
+            //userMenager.Add(user);
+            //userMenager.Add(user1);
+            //userMenager.Add(user2);
+            //userMenager.Add(user3);
+            //userMenager.Add(user4);
+            //userMenager.Add(user5);
         }
 
         private static void GetCarDetails()
