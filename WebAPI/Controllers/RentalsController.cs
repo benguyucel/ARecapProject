@@ -27,7 +27,7 @@ namespace WebAPI.Controllers
             {
                 return Ok(result);
             }
-            else { return BadRequest(result.Message); }
+            else { return BadRequest(result); }
         }
         [HttpPost("update")]
         public IActionResult Update(Rental rental)
@@ -68,6 +68,29 @@ namespace WebAPI.Controllers
                 return Ok(result);
             }
             else { return BadRequest(result.Message); }
+        }
+
+        [HttpGet("getrentalsdetails")]
+        public IActionResult GetDetails()
+        {
+            var result = _rentalService.GetRentalsDetails();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else { return BadRequest(result.Message); }
+        }
+
+        [HttpGet("checkcanrent")]
+        public IActionResult CheckCarCanRent(int carId, DateTime rentDate, DateTime returnDate)
+        {
+            Rental rental = new Rental { CarId = carId, RentDate = rentDate, ReturnDate = returnDate };
+            var result = _rentalService.CheckCarCanRent(rental);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else { return BadRequest(result); }
         }
     }
 }
